@@ -1,0 +1,50 @@
+  607  curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash  
+  714  KUBEVIRT_VERSION=$(curl -s https://api.github.com/repos/kubevirt/kubevirt/releases/latest | awk -F '[ \t":]+' '/tag_name/ {print $3}')
+  715  kubectl create -f https://github.com/kubevirt/kubevirt/releases/download/${KUBEVIRT_VERSION}/kubevirt-operator.yaml
+  716  kubectl create -f https://github.com/kubevirt/kubevirt/releases/download/${KUBEVIRT_VERSION}/kubevirt-cr.yaml 
+  718  curl -Lo virtctl https://github.com/kubevirt/kubevirt/releases/download/${KUBEVIRT_VERSION}/virtctl-${KUBEVIRT_VERSION}-linux-amd64
+  731  kubectl apply -f https://github.com/kubevirt/kubevirt/releases/download/v0.53.0/kubevirt-operator.yaml
+  732  kubectl apply -f https://github.com/kubevirt/kubevirt/releases/download/v0.53.0/kubevirt-cr.yaml
+  801  kubectl create -f "https://github.com/kubevirt/kubevirt/releases/download/${VERSION}/kubevirt-operator.yaml"
+ 1114  curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+ 1211  cd .git/
+ 1214  git remote -v  
+ 1215  git fetch  
+ 1219  git fetch  
+ 1238  git remote -v  
+ 1239  git fetch  
+ 1245  git clone git@github.com:snps-krranjan/snps-krranjan.git
+ 1252  git clone https://github.com/snps-krranjan/snps-krranjan.git
+ 1257  git status
+ 1258  git add .
+ 1259  git commit -m "adding text1"
+ 1260  git config --global user.name "Kumar Rajeev Ranjan"
+ 1261  git config --global user.email "krranjan@synopsys.com"
+ 1262  git commit -m "adding text1"
+ 1263  git push origin main 
+ 1264  cat .git/config 
+ 1265  vi .git/config 
+ 1266  git push origin main 
+ 1267  git push origin main  git@github.com:snps-krranjan/snps-krranjan.git
+ 1268  git remote -v
+ 1269  git push origin main  --force
+ 1270  git pull origin main --rebase 
+ 1271  git status
+ 1272  git add .
+ 1273  git pull origin main --rebase 
+ 1274  git remote -v
+ 1275  git pull origin main 
+ 1276  git push origin main --force
+ 1277  cd .github/
+ 1282  git push origin main --force
+ 1291  git push origin main --force
+ 1294  git push origin main --force
+ 1297  git status
+ 1298  git add .
+ 1299  git status
+ 1300  git commit -m ""This is another line"
+ 1301  git commit -m "This is another line"
+ 1303  git push origin main 
+ 1304  git sync
+ 1305  git pull origin main
+ 1308  history| grep git  > git.history

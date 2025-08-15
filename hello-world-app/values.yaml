@@ -1,0 +1,18 @@
+image:  
+  repository: krranjan/hello-world-app  
+  tag: v1  
+  pullPolicy: IfNotPresent  
+
+service:  
+  type: ClusterIP  
+  port: 5000  
+
+ingress:  
+  enabled: false  
+serviceAccount:  
+  create: true    
+autoscaling:  
+  enabled: true  
+  minReplicas: 1  
+  maxReplicas: 5  
+  cpuUtilizationPercentage: 50    
