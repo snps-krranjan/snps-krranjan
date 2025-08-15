@@ -1,6 +1,6 @@
 image:  
   repository: krranjan/hello-world-app  
-  tag: hello-world-app  
+  tag: v2 
   pullPolicy: IfNotPresent  
 
 service:  
