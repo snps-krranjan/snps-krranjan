@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: helm-lint-
+spec:
+  entrypoint: helm-lint
+  templates:
+  - name: helm-lint
+    steps:
+    - - name: lint
+        template: helm-lint-step
+    - - name: smoke
+        template: smoke-test-step
+
+  - name: helm-lint-step
+    container:
+      image: alpine/helm:3.11.0   # adjust to available image
+      command: ["/bin/sh","-c"]
+      args:
+        - helm repo add local https://raw.githubusercontent.com/<your-org-or-user>/demo-gitops/HEAD/ &&           helm lint ./charts/nginx-demo || true
+
+  - name: smoke-test-step
+    container:
+      image: appropriate/curl
+      command: ["/bin/sh","-c"]
+      args:
+        - sleep 5; curl -sS http://nginx-demo.demo-nginx.svc.cluster.local || echo "smoke failed"
