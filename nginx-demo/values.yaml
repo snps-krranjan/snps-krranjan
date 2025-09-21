@@ -1,0 +1,27 @@
+replicaCount: 2  
+
+image:  
+  repository: nginx  
+  tag: stable  
+  pullPolicy: IfNotPresent  
+
+service:  
+  type: ClusterIP  
+  port: 80  
+
+ingress:  
+  enabled: false  
+  
+serviceAccount:  
+  create: true  
+      
+httpRoute:  
+  enabled: true  
+
+autoscaling:  
+  enabled: true  
+  
+httpRoute:  
+  parentRefs:  
+    - name: some-gateway  
+      namespace: default  

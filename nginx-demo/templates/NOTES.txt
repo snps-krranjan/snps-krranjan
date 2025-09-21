@@ -1,0 +1,5 @@
+{{- if .Values.httpRoute.parentRefs }}  
+Parent Reference: {{ first .Values.httpRoute.parentRefs }}  
+{{- else }}  
+No parent references are defined for HTTPRoute.  
+{{- end }}  
