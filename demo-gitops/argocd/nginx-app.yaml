@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/snps-krranjan/snps-krranjan.git'
+    repoURL: 'https://github.com/snps-krranjan/snps-krranjan/'
     targetRevision: HEAD
-    path: charts/nginx-demo
+    path: demo-gitops/argocd 
     helm:
       valueFiles:
         - values.yaml
